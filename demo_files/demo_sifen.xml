@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rDE xmlns="http://sifen.set.gov.py/schema/de/v150">
+  <gDatGralOpe>
+    <gOpeNum>
+      <dNumDoc>FAC-001-002-000457</dNumDoc>
+    </gOpeNum>
+    <gOpeCom>
+      <dFeEmiDE>2026-03-02T10:30:00</dFeEmiDE>
+      <cMoneOpe>PYG</cMoneOpe>
+    </gOpeCom>
+    <gResta>
+      <dNomRec>Maria Gomez SIFEN DEMO</dNomRec>
+    </gResta>
+  </gDatGralOpe>
+  <gTotSub>
+    <dTotOpe>320000.0</dTotOpe>
+  </gTotSub>
+</rDE>

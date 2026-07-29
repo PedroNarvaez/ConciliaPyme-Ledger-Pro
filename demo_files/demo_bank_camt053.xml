@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.02">
+  <BkToCstmrStmt>
+    <Stmt>
+      <Id>001</Id>
+      <Ntry>
+        <Amt Ccy="PYG">150000.0</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2026-03-01</Dt>
+        </BookgDt>
+        <Refs>
+          <EndToEndId>FAC-001-002-000456</EndToEndId>
+        </Refs>
+        <AddtlNtryInf>PAGO JUAN PEREZ</AddtlNtryInf>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="PYG">450000.0</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <BookgDt>
+          <Dt>2026-03-03</Dt>
+        </BookgDt>
+        <Refs>
+          <EndToEndId>FAC-001-002-000458</EndToEndId>
+        </Refs>
+        <AddtlNtryInf>DEP CARLOS LOPEZ</AddtlNtryInf>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>

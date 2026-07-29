@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual de Usuario con Capturas - ConciliaPyme Ledger Pro</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f9fa;
+        }
+        h1, h2, h3 {
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #0d9488;
+            border-bottom: 3px solid #0d9488;
+        }
+        .meta-info {
+            text-align: center;
+            font-size: 0.9em;
+            color: #64748b;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
+        }
+        .screenshot-placeholder {
+            background-color: #0a192f;
+            color: #64ffda;
+            border: 2px dashed #233554;
+            padding: 40px;
+            text-align: center;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            box-sizing: border-box;
+        }
+        .screenshot-placeholder .title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #0d9488;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        code {
+            background-color: #f1f5f9;
+            color: #db2777;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Manual de Usuario - ConciliaPyme Ledger Pro</h1>
+    <div class="meta-info">Versión 2.3.0 | 2026 © Creado por Pedro Narváez y Ariel Torres.</div>
+
+    <div class="card">
+        <h2>1. Introducción y Acceso</h2>
+        <p>Al iniciar la aplicación, se desplegará la pantalla de inicio de sesión de seguridad. Ingrese las siguientes credenciales para acceder al sistema por primera vez:</p>
+        <ul>
+            <li><strong>Usuario:</strong> <code>admin</code></li>
+            <li><strong>Contraseña:</strong> <code>Admin@2026!</code></li>
+        </ul>
+        <p>El sistema protege contra ataques de fuerza bruta bloqueando al usuario durante 15 minutos tras 5 intentos fallidos consecutivos.</p>
+
+        <div class="screenshot-placeholder">
+            <div class="title">[Captura: Pantalla de Login]</div>
+            --------------------------------------------------------<br>
+            |             CONCILIAPYME LEDGER PRO                   |<br>
+            |  Usuario: [ admin                 ]                  |<br>
+            |  Contraseña: [ ********** ]                           |<br>
+            |                                                      |<br>
+            |                [ INICIAR SESIÓN ]                    |<br>
+            |  2026 © Creado por Pedro Narváez y Ariel Torres.      |<br>
+            --------------------------------------------------------
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. Dashboard y Conciliación Automática</h2>
+        <p>El Dashboard principal se compone de tres paneles de datos (Ventas importadas, Extractos bancarios y Resultados de la conciliación) junto con controles del sistema en el margen izquierdo:</p>
+        <ol>
+            <li><strong>Cargar Archivos Demo:</strong> Rellena automáticamente el Dashboard con datos reales paraguayos para su evaluación inmediata.</li>
+            <li><strong>Importar Ventas / Banco:</strong> Permite importar sus propios archivos. Soporta formatos CSV locales de bancos, MT940, CAMT.053 y SIFEN XML de Paraguay.</li>
+            <li><strong>Conciliar y Guardar:</strong> Aplica el motor de emparejamiento con tolerancias de fecha y monto y escribe la evidencia inmutable en la base de datos y ledger local.</li>
+        </ol>
+
+        <div class="screenshot-placeholder" style="background-color: #f4f6f9; color: #1e293b; border-color: #cbd5e1;">
+            <div class="title" style="color: #0f172a;">[Captura: Vista del Dashboard - Tema Claro]</div>
+            -------------------------------------------------------------------------<br>
+            | Reglas & Config.  | Ventas Importadas (Sin conciliar)                 |<br>
+            | Tol. Días:  [3]   | FAC-001-002-000456 | Juan Perez | 150.000 PYG    |<br>
+            | Tol. Monto: [0.0] |---------------------------------------------------|<br>
+            |                   | Extracto Bancario Importado                       |<br>
+            | Métricas Activas  | FAC-001-002-000456 | PAGO PEREZ | 150.000 PYG    |<br>
+            | Procesados: 5     |---------------------------------------------------|<br>
+            | Conciliadas: 3    | Resultados de la Corrida Activa                   |<br>
+            | Discrepancias: 1  | Venta Ref | Banco Ref | Diferencia | Estado       |<br>
+            | Pendientes: 1     | FAC-001   | FAC-001   | 0.00       | CONCILIADA   |<br>
+            -------------------------------------------------------------------------
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>3. Consulta de Cotización Divisas (Arbitraje)</h2>
+        <p>En la pestaña <strong>"Cotización"</strong> se consultan las cotizaciones vigentes del dólar estadounidense frente al guaraní (USD/PYG) provistas en línea por la API de dolarpy. Cuenta con un calculador bidireccional para realizar arbitrajes usando la fuente seleccionada.</p>
+
+        <div class="screenshot-placeholder">
+            <div class="title">[Captura: Panel de Cotizaciones y Conversor]</div>
+            --------------------------------------------------------<br>
+            |  Fuentes de Plaza   | Compra (PYG) | Venta (PYG)     |<br>
+            |  BCP                | 7.250        | 7.290           |<br>
+            |  SET                | 7.240        | 7.285           |<br>
+            |  Familiar           | 7.230        | 7.310           |<br>
+            |------------------------------------------------------|<br>
+            |  Conversor:  [ 100.00 ] USD -> [ 729.000 ] PYG       |<br>
+            |  [ CONVERTIR MONEDA ]                                |<br>
+            --------------------------------------------------------
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. Seguridad y Auditoría Criptográfica</h2>
+        <p>Tanto el ledger local de conciliaciones como el log de eventos de auditoría se encuentran encadenados mediante hashes SHA-256. Esto permite realizar una verificación matemática exhaustiva haciendo clic en <strong>"Verificar Integridad de Bitácora"</strong> o <strong>"Verificar Integridad Ledger"</strong> para comprobar que los datos no han sido adulterados por agentes externos.</p>
+
+        <div class="screenshot-placeholder">
+            <div class="title">[Captura: Verificación Criptográfica Exitosa]</div>
+            -----------------------------------------------------------<br>
+            |   ___________________________________________________   |<br>
+            |  | Info                                              |  |<br>
+            |  |                                                   |  |<br>
+            |  | Integridad del ledger local verificada con éxito. |  |<br>
+            |  | Todos los bloques están intactos.                 |  |<br>
+            |  |___________________________________________________|  |<br>
+            |                      [ ACEPTAR ]                        |<br>
+            -----------------------------------------------------------
+        </div>
+    </div>
+
+</body>
+</html>
