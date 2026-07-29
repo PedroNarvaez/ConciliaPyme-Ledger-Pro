@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database files
+*.db
+*.db-journal
+*.db-wal
+
+# Backup files
+*.cplybak
+
+# Log files
+app_run.log
+*.log
+
+# PyInstaller / build directories
+build/
+dist/
+demo_files/
+test_demo_files/
+
+# OS-specific
+.DS_Store
+Thumbs.db
