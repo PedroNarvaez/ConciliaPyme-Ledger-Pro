@@ -1,0 +1,46 @@
+```
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Environment
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Editors
+.vscode/
+.idea/
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Distribution / packaging
+*.tar.gz
+*.whl
+
+# Local configuration
+.env
+.env.local
+*.env.*
+```

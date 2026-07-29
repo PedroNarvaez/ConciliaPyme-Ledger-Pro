@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Usuario - ConciliaPyme Ledger Pro</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0f3460; border-bottom: 3px solid #00d9ff; padding-bottom: 10px; }
+        h2 { color: #0f3460; margin-top: 30px; }
+        .screenshot { background: #f0f0f0; border: 1px solid #ccc; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .screenshot-title { font-weight: bold; color: #666; margin-bottom: 10px; }
+        .screenshot-img { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #eaeaea; padding: 30px; border-radius: 5px; font-family: monospace; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }
+        .tip { background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #0f3460; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .copyright { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>📘 Manual de Usuario - ConciliaPyme Ledger Pro</h1>
+    <p><strong>Versión 2.3.0</strong></p>
+    
+    <h2>1. Introducción</h2>
+    <p>ConciliaPyme Ledger Pro es una aplicación de escritorio para conciliación financiera automatizada, diseñada específicamente para PYMES paraguayas.</p>
+    
+    <div class="tip">
+        <strong>💡 Consejo:</strong> Use los datos demo para familiarizarse con la aplicación antes de importar datos reales.
+    </div>
+    
+    <h2>2. Inicio de Sesión</h2>
+    <div class="screenshot">
+        <div class="screenshot-title">Pantalla de Login:</div>
+        <div class="screenshot-img">
+            ┌─────────────────────────────────────┐<br>
+            │   ConciliaPyme Ledger Pro v2.3.0   │<br>
+            │                                     │<br>
+            │          ╭─────────────╮           │<br>
+            │         │     CP      │            │<br>
+            │          ╰─────────────╯           │<br>
+            │                                     │<br>
+            │   Usuario: [____________]          │<br>
+            │   Contraseña: [••••••••••]         │<br>
+            │                                     │<br>
+            │      [  Iniciar Sesión  ]          │<br>
+            │                                     │<br>
+            │   2026 © Pedro Narváez y Ariel T.  │<br>
+            └─────────────────────────────────────┘
+        </div>
+    </div>
+    
+    <p><strong>Credenciales por defecto:</strong></p>
+    <ul>
+        <li>Usuario: <code>admin</code></li>
+        <li>Contraseña: <code>Admin@2026!</code></li>
+    </ul>
+    
+    <div class="note">
+        <strong>⚠️ Importante:</strong> Tras 5 intentos fallidos, la cuenta se bloquea por 15 minutos.
+    </div>
+    
+    <h2>3. Dashboard Principal</h2>
+    <div class="screenshot">
+        <div class="screenshot-title">Panel de Métricas:</div>
+        <div class="screenshot-img">
+            ┌──────────────────────────────────────────────────┐<br>
+            │  MÉTRICAS                                        │<br>
+            │  ┌─────────────┬─────────────┬─────────────┐   │<br>
+            │  │ Ventas      │ Movimientos │ Conciliadas │   │<br>
+            │  │    125      │     98      │     87      │   │<br>
+            │  └─────────────┴─────────────┴─────────────┘   │<br>
+            │  ┌─────────────┬─────────────┬─────────────┐   │<br>
+            │  │ Discrep.    │ Pendientes  │ Bloques     │   │<br>
+            │  │     5       │     33      │    142      │   │<br>
+            │  └─────────────┴─────────────┴─────────────┘   │<br>
+            │                                                  │<br>
+            │  [Cargar Demo] [Importar] [Conciliar] [Exportar]│<br>
+            └──────────────────────────────────────────────────┘
+        </div>
+    </div>
+    
+    <h2>4. Importar Datos</h2>
+    <p>La aplicación soporta múltiples formatos:</p>
+    
+    <table>
+        <tr>
+            <th>Formato</th>
+            <th>Descripción</th>
+            <th>Extensión</th>
+        </tr>
+        <tr>
+            <td>CSV Ventas</td>
+            <td>Planilla de ventas locales</td>
+            <td>.csv</td>
+        </tr>
+        <tr>
+            <td>CSV Banco</td>
+            <td>Extracto bancario estándar</td>
+            <td>.csv</td>
+        </tr>
+        <tr>
+            <td>MT940</td>
+            <td>Standard bancario internacional</td>
+            <td>.txt</td>
+        </tr>
+        <tr>
+            <td>CAMT.053</td>
+            <td>XML bancario SEPA</td>
+            <td>.xml</td>
+        </tr>
+        <tr>
+            <td>SIFEN/DTE</td>
+            <td>Facturación electrónica Paraguay</td>
+            <td>.xml</td>
+        </tr>
+    </table>
+    
+    <h2>5. Conciliación</h2>
+    <p>El sistema compara automáticamente ventas contra movimientos bancarios usando:</p>
+    <ul>
+        <li>Referencia de transacción</li>
+        <li>Cliente/Descripción</li>
+        <li>Fecha (con tolerancia configurable)</li>
+        <li>Monto (con tolerancia configurable)</li>
+    </ul>
+    
+    <div class="screenshot">
+        <div class="screenshot-title">Resultados de Conciliación:</div>
+        <div class="screenshot-img">
+            ┌─────────────────────────────────────────────────────────┐<br>
+            │ ID │ Ref Venta │ Ref Banco │ Estado       │ Monto     │<br>
+            ├────┼───────────┼───────────┼──────────────┼───────────┤<br>
+            │ 1  │ VNT-001   │ REF-001   │ 🟢 Conciliada│ 1.500.000 │<br>
+            │ 2  │ VNT-002   │ REF-002   │ 🟢 Conciliada│ 2.300.000 │<br>
+            │ 3  │ VNT-003   │ REF-003   │ 🟡 Discrep.  │ 1.800.000 │<br>
+            │ 4  │ VNT-004   │ ---       │ 🔴 Pendiente │ 3.200.000 │<br>
+            └─────────────────────────────────────────────────────────┘
+        </div>
+    </div>
+    
+    <h2>6. Cotización USD/PYG</h2>
+    <div class="screenshot">
+        <div class="screenshot-title">Panel de Cotización:</div>
+        <div class="screenshot-img">
+            ┌─────────────────────────────────────────┐<br>
+            │  COTIZACIÓN USD/PYG                     │<br>
+            │  Actualizado: 2026-01-15 10:30          │<br>
+            │                                         │<br>
+            │  BCP        │ Compra: 7850  │ Venta: 7900│<br>
+            │  SET        │ Compra: 7840  │ Venta: 7890│<br>
+            │  Familiar   │ Compra: 7855  │ Venta: 7905│<br>
+            │                                         │<br>
+            │  Conversor: [100] USD → ₲ 790.000      │<br>
+            └─────────────────────────────────────────┘
+        </div>
+    </div>
+    
+    <h2>7. Auditoría</h2>
+    <p>Todos los eventos quedan registrados con hash encadenado SHA-256:</p>
+    <ul>
+        <li>Logins exitosos y fallidos</li>
+        <li>Importaciones de datos</li>
+        <li>Ejecuciones de conciliación</li>
+        <li>Exportaciones de reportes</li>
+        <li>Verificaciones de ledger</li>
+        <li>Backups creados/restaurados</li>
+    </ul>
+    
+    <div class="tip">
+        <strong>🔒 Seguridad:</strong> Puede verificar la integridad de la auditoría en cualquier momento. El sistema validará toda la cadena de hashes.
+    </div>
+    
+    <h2>8. Backup y Restauración</h2>
+    <p><strong>Para crear backup:</strong></p>
+    <ol>
+        <li>Menú Archivo → Backup</li>
+        <li>Seleccione ubicación de guardado</li>
+        <li>Ingrese clave de cifrado</li>
+        <li>El archivo se guardará como <code>.cplybak</code></li>
+    </ol>
+    
+    <div class="note">
+        <strong>⚠️ Advertencia:</strong> Sin la clave correcta, no se puede restaurar el backup. Guárdela en lugar seguro.
+    </div>
+    
+    <h2>9. Gestión de Usuarios</h2>
+    <p>Roles disponibles:</p>
+    <table>
+        <tr>
+            <th>Rol</th>
+            <th>Permisos</th>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>Todos los permisos, gestión de usuarios</td>
+        </tr>
+        <tr>
+            <td>Contador</td>
+            <td>Operaciones diarias, conciliación</td>
+        </tr>
+        <tr>
+            <td>Gerente</td>
+            <td>Consultas, reportes, aprobación</td>
+        </tr>
+        <tr>
+            <td>Auditor</td>
+            <td>Solo lectura, verificaciones</td>
+        </tr>
+    </table>
+    
+    <h2>10. Solución de Problemas</h2>
+    
+    <h3>La aplicación no inicia</h3>
+    <p><strong>Solución:</strong> Verifique que Python 3.8+ esté instalado:</p>
+    <pre><code>python --version</code></pre>
+    
+    <h3>Error de login</h3>
+    <p><strong>Causas posibles:</strong></p>
+    <ul>
+        <li>Contraseña incorrecta</li>
+        <li>Cuenta bloqueada (espere 15 minutos)</li>
+    </ul>
+    
+    <h3>Ledger muestra error de integridad</h3>
+    <p><strong>Solución:</strong> Restaure desde backup válido o contacte al administrador.</p>
+    
+    <div class="copyright">
+        <p><strong>ConciliaPyme Ledger Pro v2.3.0</strong></p>
+        <p>2026 © Creado por Pedro Narváez y Ariel Torres.</p>
+    </div>
+</body>
+</html>
