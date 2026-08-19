@@ -1,0 +1,1 @@
+export default {darkMode:'class',content:['./index.html','./src/**/*.{ts,tsx}'],theme:{extend:{colors:{bank:'#146ef5',emerald:'#10b981',darkfin:'#080808'},fontFamily:{mono:['ui-monospace','SFMono-Regular','Menlo','monospace']}}},plugins:[]}
