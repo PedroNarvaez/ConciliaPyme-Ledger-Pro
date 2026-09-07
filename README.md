@@ -1,6 +1,6 @@
 # ConciliaPyme Ledger Pro
 
-## Sistema de Conciliación Financiera Automatizada para PYMES mediante Tecnología Blockchain Permissionada
+## Sistema de Conciliación Financiera Automatizada para PYMES mediante Tecnología Blockchain Permisionada
 
 **Versión:** 2.3.0  
 **Copyright:** 2026 © Creado por Pedro Narváez y Ariel Torres.
