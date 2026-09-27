@@ -26,7 +26,11 @@ import {
 import "./index.css";
 
 type Role =
-  "Superadmin" | "Administrador" | "Auditor" | "Tesorero" | "Operador";
+  | "Superadmin"
+  | "Administrador"
+  | "Auditor"
+  | "Tesorero"
+  | "Operador";
 interface UserProfile {
   username: string;
   password: string;
@@ -328,13 +332,12 @@ function App() {
             </div>
             <div className="flex gap-2">
               <select
+                aria-label="Seleccionar empresa"
                 className="input"
                 value={company.id}
                 onChange={(e) =>
                   setCompany(allCompanies.find((c) => c.id === e.target.value)!)
                 }
-                aria-label="Seleccionar empresa"
-                title="Seleccionar empresa"
               >
                 {allCompanies.map((c) => (
                   <option key={c.id} value={c.id}>
@@ -347,11 +350,10 @@ function App() {
                 Empresa
               </button>
               <select
+                aria-label="Seleccionar tema"
                 className="input"
                 value={theme}
                 onChange={(e) => setTheme(e.target.value)}
-                aria-label="Seleccionar tema"
-                title="Seleccionar tema"
               >
                 <option value="system">Auto</option>
                 <option value="light">Claro</option>
@@ -362,13 +364,13 @@ function App() {
                 Usuarios
               </button>
               <button
+                aria-label="Cerrar sesión"
+                title="Cerrar sesión"
                 className="btn"
                 onClick={() => {
                   localStorage.removeItem("session");
                   setSession(null);
                 }}
-                aria-label="Cerrar sesión"
-                title="Cerrar sesión"
               >
                 <LogOut size={16} />
               </button>
@@ -455,19 +457,19 @@ function Login(p: { users: UserProfile[]; onLogin: (u: UserProfile) => void }) {
           Plataforma corporativa de conciliación bancaria ISO 20022 para PYMEs.
         </p>
         <input
+          aria-label="Usuario"
           className="login"
           placeholder="Usuario"
           value={u}
           onChange={(e) => setU(e.target.value)}
-          aria-label="Usuario"
         />
         <input
+          aria-label="Contraseña"
           className="login"
           type="password"
           placeholder="Contraseña"
           value={pw}
           onChange={(e) => setPw(e.target.value)}
-          aria-label="Contraseña"
         />
         {err && <p className="text-red-300">{err}</p>}
         <button className="mt-5 w-full rounded-xl bg-bank py-3 font-black">
@@ -583,12 +585,14 @@ function Visor({ stmt, setStmt, notify }: any) {
       <div className="card">
         <div className="flex gap-2 mb-3">
           <input
+            aria-label="Buscar transacciones, RUC o SIPAP"
             className="input flex-1"
             placeholder="Buscar transacciones, RUC o SIPAP"
             value={q}
             onChange={(e) => setQ(e.target.value)}
           />
           <select
+            aria-label="Filtrar por tipo"
             className="input"
             value={type}
             onChange={(e) => setType(e.target.value)}
@@ -622,6 +626,7 @@ function Drop({ parse }: any) {
       <Upload className="mx-auto text-bank" />
       <b>Arrastre CAMT.052/.053/.054, XML, CSV, TXT o JSON</b>
       <input
+        aria-label="Subir archivo"
         type="file"
         className="hidden"
         onChange={(e) => {

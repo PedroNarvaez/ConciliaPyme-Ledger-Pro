@@ -43,6 +43,4 @@ htmlcov/
 .env
 .env.local
 *.env.*
-```node_modules
-node_modules
-dist
+```node_modules/
