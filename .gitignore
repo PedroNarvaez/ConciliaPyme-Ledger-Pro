@@ -1,4 +1,4 @@
-```
+
 # Python
 __pycache__/
 *.pyc
@@ -43,4 +43,5 @@ htmlcov/
 .env
 .env.local
 *.env.*
-```
+node_modules/
+node_modules/
